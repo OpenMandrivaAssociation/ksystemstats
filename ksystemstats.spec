@@ -23,6 +23,7 @@ BuildRequires: pkgconfig(libsystemd)
 BuildRequires: pkgconfig(libnl-3.0)
 BuildRequires: pkgconfig(libpcap)
 BuildRequires: lm_sensors-devel
+BuildConflicts: xdg-desktop-portal-kde < 5.100.0
 
 %description
 KSystemStats is a daemon that collects
