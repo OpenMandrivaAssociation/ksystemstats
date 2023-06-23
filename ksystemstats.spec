@@ -15,7 +15,7 @@ BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5NetworkManagerQt)
-BuildRequires: cmake(KSysGuard) < 5.100.0
+BuildRequires: cmake(KF5SysGuard)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Test)
 BuildRequires: pkgconfig(udev)
