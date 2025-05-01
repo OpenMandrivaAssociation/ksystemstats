@@ -4,9 +4,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-ksystemstats
+Name: ksystemstats
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/ksystemstats/-/archive/%{gitbranch}/ksystemstats-%{gitbranchd}.tar.bz2#/ksystemstats-%{git}.tar.bz2
 %else
@@ -57,27 +57,16 @@ BuildRequires: pkgconfig(libnl-3.0)
 BuildRequires: pkgconfig(libpcap)
 BuildRequires: pkgconfig(libcap)
 BuildRequires: lm_sensors-devel
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed after 6.0 2025-05-01
+%rename plasma6-ksystemstats
 
 %description
 KDE Frameworks 6 system monitoring framework.
 
-%prep
-%autosetup -p1 -n ksystemstats-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-
-%find_lang ksystemstats --all-name --with-html
-
-%files -f ksystemstats.lang
+%files -f %{name}.lang
 %{_prefix}/lib/systemd/user/plasma-ksystemstats.service
 %{_bindir}/ksystemstats
 %{_bindir}/kstatsviewer
