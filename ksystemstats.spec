@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: ksystemstats
-Version:	6.3.5
+Version:	6.4.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/ksystemstats/-/archive/%{gitbranch}/ksystemstats-%{gitbranchd}.tar.bz2#/ksystemstats-%{git}.tar.bz2
@@ -73,3 +73,4 @@ KDE Frameworks 6 system monitoring framework.
 %{_qtdir}/plugins/ksystemstats
 %{_datadir}/dbus-1/services/org.kde.ksystemstats1.service
 %{_datadir}/qlogging-categories6/ksystemstats.categories
+%{_libdir}/libexec/ksystemstats_intel_helper
