@@ -56,6 +56,7 @@ BuildRequires: pkgconfig(gio-2.0)
 BuildRequires: pkgconfig(libnl-3.0)
 BuildRequires: pkgconfig(libpcap)
 BuildRequires: pkgconfig(libcap)
+BuildRequires: pkgconfig(libudev)
 BuildRequires: lm_sensors-devel
 BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
