@@ -5,8 +5,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: ksystemstats
-Version:	6.7.5
-Release:	%{?git:0.%{git}.}2
+Version:	6.8.0
+Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/ksystemstats/-/archive/%{gitbranch}/ksystemstats-%{gitbranchd}.tar.bz2#/ksystemstats-%{git}.tar.bz2
 %else
