@@ -76,3 +76,4 @@ KDE Frameworks 6 system monitoring framework.
 %{_datadir}/dbus-1/services/org.kde.ksystemstats1.service
 %{_datadir}/qlogging-categories6/ksystemstats.categories
 %caps(cap_perfmon=ep) %{_libdir}/libexec/ksystemstats_intel_helper
+%caps(cap_perfmon=ep) %{_libdir}/libexec/ksystemstats_xe_helper
